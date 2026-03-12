@@ -1,8 +1,9 @@
 ---
 - name: Create multiple users
+  hosts: all
   become: yes # Needed to create users with elevated privileges
   vars:
-    - user: sammy
+    user: sammy
   tasks:
     - name: Ensure users are present
       ansible.builtin.user:
