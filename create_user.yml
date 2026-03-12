@@ -1,0 +1,14 @@
+---
+- name: Create multiple users
+  become: yes # Needed to create users with elevated privileges
+  vars:
+    - user: sammy
+  tasks:
+    - name: Ensure users are present
+      ansible.builtin.user:
+        name: "{{ user }}"
+        shell: "/bin/bash"
+        state: present
+        createhome: yes
+        password: $6$IvYyEfhpt0f.yFl0$q0df7duu.Zafw5SwF3gZofUvJojWPjoOeLgt3Eche0bNh05WJ9yAlJxmC0K6V.ee4BaY4ZAltnsZVJGw620Ku.
+      
