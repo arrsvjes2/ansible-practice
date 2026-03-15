@@ -1,0 +1,90 @@
+Sesion 7
+
+
+a) Crear el inventario static???? agregar el grupo cluster y agregar
+   los hosts 4-25
+
+1. Modificar el proyecto proyectoASDF para que use la URL de repositorio:
+   https://github.com/arrsvjes2/ansible-practice.git
+
+   y el inventario static????
+
+   Verificar que se haya hecho la sincronizacion correcta
+   Activar preguntar al ejecutar en el template jobASDF
+   Agregar la variable user=guest
+
+   Ejecutar el job. con el valos de user=user????
+
+   y comprobar que el usuario se ha creado correctamente.
+   ssh peter@virtualmachine0 hostname
+2. Modificar el job???? para que pregunte al ejecutarse el inventario
+   sobre el que va a ejecutar.
+
+3. Comentar user: guest en Variable
+
+4. Cambiar el playbook a playbook-04.yml en el job job????
+   Ejecutar y configurar la varaible user. Usar escalacion de privilegios
+
+   Verificar la ejecucion correcta y la creacion del archivo myfile
+
+   Cambiar el playbook a playbook5.yml, playbook6.yml,
+   playbook10 ejecuarlo sobre 1 solo host 
+
+5. Configurar el Limite para el job???? para preguntar al ejecutar.
+   Ejecutar playbook10 con un solo host.
+
+6. Desactivar los facts para el playbook 10.
+
+7. Crear un nuevo proyecto llamado gitlab???? y usar la URL:
+   http://173.201.39.201/redhattraining/ansible-practice
+
+   Intentar sincronizar. y revisar porque fallo.
+
+   Crear la credencial de source control gitlab????
+   redhattraining
+   Chorote99$$
+
+   Sincronizar.
+
+8. Crear un job job_gitlab_???? que use el proyecto gitlab????
+   Probar con playbook-01.yml
+
+9. SECRET....
+
+   Crear una credencial tipo vault para almacenar el password decrypt del secret
++--------------------+-------------+
+| Field              | Value       |
++--------------------+-------------+
+| Nombre             | secret_???? |
+| Tipo de credencial | Vault       |
+| Contraseña         | redhat123   |
++--------------------+-------------+
+
+   Crear el proyecto containers_???? con la siguiente configuracion:
++--------------------------+------------------------------------------------------+
+| Nombre:                  | containers????                                       |
++--------------------------+------------------------------------------------------+
+| Organization             | GIT                                                  |
+| URL de fuente de control | http://173.201.39.201//redhattraining/containers.git |
++--------------------------+------------------------------------------------------+
+
+   Crear el template llamado job_container_???? con la siguiente configuracion:
+
++----------------------+----------------------------------------------+
+| Nombre               | job_containers_????                          |
++----------------------+----------------------------------------------+
+| Tipo de trabajo      | Ejecutar                                     |
+| Inventario           | inventory????                                |
+| Proyecto             | containers????                               |
+| Entorno de ejecucion | Automation Hub Default execution environment |
+| Playbook             | create_container_nginx.yml                   |
+| Credenciales         | Credential????   secret_????                 |
+| Variables            | user: ansible. (Preguntar al ejecutar)       |
+| Nivel de detalle     | 1                                            |
+| Limite               | virtualmachine?                              |
++----------------------+----------------------------------------------+
+   
+Ejecutar el playbook
+Validar el funcionamiento del container
+borrar el container
+ 
