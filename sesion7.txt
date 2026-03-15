@@ -4,6 +4,19 @@ Sesion 7
 a) Crear el inventario static???? agregar el grupo cluster y agregar
    los hosts 4-25
 
+Crear el siguiente inventario:
+[controlplane]
+virtualmachine0
+virtualmachine1
+virtualmachine2
+virtualmachine3
+
+[cluster]
+virtualmachine4
+virtualmachine5
+...
+virtuamachine25
+
 1. Modificar el proyecto proyectoASDF para que use la URL de repositorio:
    https://github.com/arrsvjes2/ansible-practice.git
 
