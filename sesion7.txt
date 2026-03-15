@@ -1,5 +1,5 @@
 Sesion 7
-
+====================================================================
 
 a) Crear el inventario static???? agregar el grupo cluster y agregar
    los hosts 4-25
