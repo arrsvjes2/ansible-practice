@@ -2,6 +2,7 @@
 - name: Create multiple users
   hosts: all
   become: yes # Needed to create users with elevated privileges
+  gather_facts: false
   vars:
     user: sammy
   tasks:
